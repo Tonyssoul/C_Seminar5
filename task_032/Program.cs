@@ -18,17 +18,16 @@ void PrintArray(int[] array)
     System.Console.WriteLine("[ " + string.Join(", ", array) + "]");
 }
 
-int[] changeNegativeAndPositive(int[] array)
+void changeNegativeAndPositive(int[] array)
 {
-    int[] result = new int[size];
     for (int i = 0; i < array.Length; i++)
     {
 
-        result[i] += -array[i];
+        array[i] = -array[i];
     }
-    return result;
 }
 
 int[] myArray = GenerateArray(12, -9, 9);
 PrintArray(myArray);
-System.Console.WriteLine($"Сумма отрицательных элементов равна {result[i]}");
+changeNegativeAndPositive(myArray);
+PrintArray(myArray);
